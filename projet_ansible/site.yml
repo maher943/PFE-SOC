@@ -1,5 +1,0 @@
----
-- name: Preparation de l'infrastructure SOC
-  hosts: all
-  roles:
-    - common

@@ -1,0 +1,9 @@
+---
+# Version fixe = reproductible (tu peux changer ensuite)
+k3s_version: "v1.29.3+k3s1"
+
+# Si tu veux garder Traefik, mets "" au lieu de "--disable traefik"
+k3s_server_extra_args: "--disable traefik"
+
+# Pour lire kubeconfig facilement
+k3s_write_kubeconfig_mode: "644"

@@ -1,0 +1,22 @@
+#SPDX-License-Identifier: MIT-0
+---
+- name: Determine master host
+  ansible.builtin.set_fact:
+    k3s_master_host: "{{ groups['k3s_master'][0] }}"
+
+- name: Validate master facts exist
+  ansible.builtin.fail:
+    msg: "Missing k3s_token or k3s_server_url from master. Ensure k3s_master role ran successfully."
+  when: hostvars[k3s_master_host].k3s_token is not defined or hostvars[k3s_master_host].k3s_server_url is not defined
+
+- name: Install K3s agent and join cluster
+  ansible.builtin.shell: |
+    set -euo pipefail
+    curl -sfL https://get.k3s.io | \
+      INSTALL_K3S_VERSION="{{ k3s_version }}" \
+      K3S_URL="{{ hostvars[k3s_master_host].k3s_server_url }}" \
+      K3S_TOKEN="{{ hostvars[k3s_master_host].k3s_token }}" \
+      sh -s - agent {{ k3s_agent_extra_args }}
+  args:
+    executable: /bin/bash
+    creates: /usr/local/bin/k3s-agent

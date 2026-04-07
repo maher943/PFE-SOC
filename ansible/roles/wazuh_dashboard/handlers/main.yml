@@ -1,0 +1,6 @@
+---
+# handlers file for wazuh_dashboard
+- name: restart wazuh-dashboard
+  systemd:
+    name: wazuh-dashboard
+    state: restarted

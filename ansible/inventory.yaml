@@ -18,6 +18,19 @@ all:
     wazuh_agent:
       hosts:
         node1:
+        master:
+        worker:
+      
+    wazuh_indexer:
+      hosts:
+        localhost: 
+          ansible_connection: local
+
+    wazuh_dashboard:
+      hosts:
+        localhost: 
+          ansible_connection: local
+      
         
   vars:
     ansible_user: user-ansible

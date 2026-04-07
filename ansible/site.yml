@@ -16,3 +16,14 @@
   become: true
   roles:
     - k3s_worker
+
+# --- Nouveaux plays Wazuh ---
+- name: Install Wazuh Manager
+  hosts: wazuh_manager
+  roles:
+    - wazuh-manager
+
+- name: Install Wazuh Agent
+  hosts: wazuh_agent
+  roles:
+    - wazuh-agent

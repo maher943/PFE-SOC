@@ -1,0 +1,6 @@
+---
+# defaults file for wazuh-agent
+wazuh_version: "4.9.0"
+wazuh_manager_ip: "192.168.1.10"   # IP de ton Wazuh Manager
+wazuh_manager_port: 1514
+wazuh_manager_protocol: tcp 

@@ -1,0 +1,6 @@
+---
+# defaults file for wazuh_dashboard
+wazuh_version: "4.14.4"
+wazuh_dashboard_port: 443
+wazuh_indexer_url: "https://127.0.0.1:9200"
+wazuh_manager_url: "https://127.0.0.1:55000"

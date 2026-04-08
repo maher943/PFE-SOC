@@ -16,3 +16,28 @@
   become: true
   roles:
     - k3s_worker
+
+# --- Wazuh Stack ---
+- name: Install Wazuh Manager
+  hosts: wazuh_manager
+  become: true
+  roles:
+    - wazuh_manager
+
+- name: Install Wazuh Indexer
+  hosts: wazuh_manager        # même machine que le manager (nodeManager)
+  become: true
+  roles:
+    - wazuh_indexer
+
+- name: Install Wazuh Dashboard
+  hosts: wazuh_manager        # même machine que le manager (nodeManager)
+  become: true
+  roles:
+    - wazuh_dashboard
+
+- name: Install Wazuh Agent
+  hosts: wazuh_agent
+  become: true
+  roles:
+    - wazuh_agent

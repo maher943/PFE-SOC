@@ -104,8 +104,8 @@ resource "azurerm_linux_virtual_machine" "vm" {
   name                = "${var.prefix}-vm"
   resource_group_name = azurerm_resource_group.rg.name
   location            = var.location
-  size                = "Standard_B1s"
-
+  size                = "Standard_D2s_v3"
+  
   admin_username = var.admin_username
 
   network_interface_ids = [
@@ -134,13 +134,3 @@ resource "azurerm_linux_virtual_machine" "vm" {
   }
 }
 
-#######################################################################################################################
-# VMware_vm 
-resource "vmworkstation_virtual_machine" "ubuntu_vm" {
-  path         = var.vm_path
-  sourceid     = var.template_id
-  denomination = var.vm_name
-  description  = "Ubuntu VM créée par Terraform"
-  processors   = var.cpu_count
-  memory       = var.memory_mb
-}

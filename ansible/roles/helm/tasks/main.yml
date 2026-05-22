@@ -1,0 +1,43 @@
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for roles/helm
+- name: Check kubeconfig exists
+  ansible.builtin.stat:
+    path: "{{ kubeconfig_path }}"
+  register: kubeconfig
+  failed_when: not kubeconfig.stat.exists
+
+- name: Verify K3s cluster is accessible
+  ansible.builtin.command: "kubectl --kubeconfig={{ kubeconfig_path }} cluster-info"
+  changed_when: false
+  
+- name: Download Helm
+  get_url:
+    url: "https://get.helm.sh/helm-{{ helm_version }}-linux-amd64.tar.gz"
+    dest: /tmp/helm.tar.gz
+
+- name: Extract Helm
+  unarchive:
+    src: /tmp/helm.tar.gz
+    dest: /tmp/
+    remote_src: yes
+
+- name: Install Helm
+  copy:
+    src: /tmp/linux-amd64/helm
+    dest: "{{ helm_install_path }}"
+    mode: '0755'
+    remote_src: yes
+
+- name: Ensure kubeconfig readable
+  file:
+    path: "{{ kubeconfig_path }}"
+    mode: '0644'
+
+- name: Clean up Helm temp files
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: absent
+  loop:
+    - /tmp/helm.tar.gz
+    - /tmp/linux-amd64/

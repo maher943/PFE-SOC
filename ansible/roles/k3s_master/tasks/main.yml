@@ -22,4 +22,4 @@
 - name: Expose token and server url as facts (for workers)
   ansible.builtin.set_fact:
     k3s_token: "{{ (k3s_node_token_b64.content | b64decode).strip() }}"
-    k3s_server_url: "https://{{ ansible_default_ipv4.address }}:6443"
+    k3s_server_url: "https://{{ ansible_facts['default_ipv4']['address'] }}:6443"

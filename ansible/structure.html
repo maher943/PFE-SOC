@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <meta name="Author" content="Made by 'tree'">
+ <meta name="GENERATOR" content="tree v2.1.1 © 1996 - 2023 by Steve Baker, Thomas Moore, Francesc Rocher, Florian Sesser, Kyosuke Tokoro">
+ <title>Directory Tree</title>
+ <style type="text/css">
+  BODY { font-family : monospace, sans-serif;  color: black;}
+  P { font-family : monospace, sans-serif; color: black; margin:0px; padding: 0px;}
+  A:visited { text-decoration : none; margin : 0px; padding : 0px;}
+  A:link    { text-decoration : none; margin : 0px; padding : 0px;}
+  A:hover   { text-decoration: underline; background-color : yellow; margin : 0px; padding : 0px;}
+  A:active  { margin : 0px; padding : 0px;}
+  .VERSION { font-size: small; font-family : arial, sans-serif; }
+  .NORM  { color: black;  }
+  .FIFO  { color: purple; }
+  .CHAR  { color: yellow; }
+  .DIR   { color: blue;   }
+  .BLOCK { color: yellow; }
+  .LINK  { color: aqua;   }
+  .SOCK  { color: fuchsia;}
+  .EXEC  { color: green;  }
+ </style>
+</head>
+<body>
+	<h1>Directory Tree</h1><p>
+	<a href="./">.</a><br>
+	├── <a href="./ansible.cfg">ansible.cfg</a><br>
+	├── <a href="./inventory.yaml">inventory.yaml</a><br>
+	├── <a href="./requirements.yml">requirements.yml</a><br>
+	├── <a href="./roles/">roles</a><br>
+	│   ├── <a href="./roles/common/">common</a><br>
+	│   │   ├── <a href="./roles/common/defaults/">defaults</a><br>
+	│   │   │   └── <a href="./roles/common/defaults/main.yml">main.yml</a><br>
+	│   │   ├── <a href="./roles/common/files/">files</a><br>
+	│   │   ├── <a href="./roles/common/handlers/">handlers</a><br>
+	│   │   │   └── <a href="./roles/common/handlers/main.yml">main.yml</a><br>
+	│   │   ├── <a href="./roles/common/meta/">meta</a><br>
+	│   │   │   └── <a href="./roles/common/meta/main.yml">main.yml</a><br>
+	│   │   ├── <a href="./roles/common/README.md">README.md</a><br>
+	│   │   ├── <a href="./roles/common/tasks/">tasks</a><br>
+	│   │   │   └── <a href="./roles/common/tasks/main.yml">main.yml</a><br>
+	│   │   ├── <a href="./roles/common/templates/">templates</a><br>
+	│   │   ├── <a href="./roles/common/tests/">tests</a><br>
+	│   │   │   ├── <a href="./roles/common/tests/inventory">inventory</a><br>
+	│   │   │   └── <a href="./roles/common/tests/test.yml">test.yml</a><br>
+	│   │   └── <a href="./roles/common/vars/">vars</a><br>
+	│   │   &nbsp;&nbsp;&nbsp; └── <a href="./roles/common/vars/main.yml">main.yml</a><br>
+	│   ├── <a href="./roles/helm/">helm</a><br>
+	│   │   ├── <a href="./roles/helm/defaults/">defaults</a><br>
+	│   │   │   └── <a href="./roles/helm/defaults/main.yml">main.yml</a><br>
+	│   │   ├── <a href="./roles/helm/files/">files</a><br>
+	│   │   ├── <a href="./roles/helm/handlers/">handlers</a><br>
+	│   │   │   └── <a href="./roles/helm/handlers/main.yml">main.yml</a><br>
+	│   │   ├── <a href="./roles/helm/meta/">meta</a><br>
+	│   │   │   └── <a href="./roles/helm/meta/main.yml">main.yml</a><br>
+	│   │   ├── <a href="./roles/helm/README.md">README.md</a><br>
+	│   │   ├── <a href="./roles/helm/tasks/">tasks</a><br>
+	│   │   │   └── <a href="./roles/helm/tasks/main.yml">main.yml</a><br>
+	│   │   ├── <a href="./roles/helm/templates/">templates</a><br>
+	│   │   ├── <a href="./roles/helm/tests/">tests</a><br>
+	│   │   │   ├── <a href="./roles/helm/tests/inventory">inventory</a><br>
+	│   │   │   └── <a href="./roles/helm/tests/test.yml">test.yml</a><br>
+	│   │   └── <a href="./roles/helm/vars/">vars</a><br>
+	│   │   &nbsp;&nbsp;&nbsp; └── <a href="./roles/helm/vars/main.yml">main.yml</a><br>
+	│   ├── <a href="./roles/helmDeployWazuh/">helmDeployWazuh</a><br>
+	│   │   ├── <a href="./roles/helmDeployWazuh/defaults/">defaults</a><br>
+	│   │   │   └── <a href="./roles/helmDeployWazuh/defaults/main.yml">main.yml</a><br>
+	│   │   ├── <a href="./roles/helmDeployWazuh/files/">files</a><br>
+	│   │   ├── <a href="./roles/helmDeployWazuh/handlers/">handlers</a><br>
+	│   │   │   └── <a href="./roles/helmDeployWazuh/handlers/main.yml">main.yml</a><br>
+	│   │   ├── <a href="./roles/helmDeployWazuh/meta/">meta</a><br>
+	│   │   │   └── <a href="./roles/helmDeployWazuh/meta/main.yml">main.yml</a><br>
+	│   │   ├── <a href="./roles/helmDeployWazuh/README.md">README.md</a><br>
+	│   │   ├── <a href="./roles/helmDeployWazuh/tasks/">tasks</a><br>
+	│   │   │   └── <a href="./roles/helmDeployWazuh/tasks/main.yml">main.yml</a><br>
+	│   │   ├── <a href="./roles/helmDeployWazuh/templates/">templates</a><br>
+	│   │   ├── <a href="./roles/helmDeployWazuh/tests/">tests</a><br>
+	│   │   │   ├── <a href="./roles/helmDeployWazuh/tests/inventory">inventory</a><br>
+	│   │   │   └── <a href="./roles/helmDeployWazuh/tests/test.yml">test.yml</a><br>
+	│   │   └── <a href="./roles/helmDeployWazuh/vars/">vars</a><br>
+	│   │   &nbsp;&nbsp;&nbsp; └── <a href="./roles/helmDeployWazuh/vars/main.yml">main.yml</a><br>
+	│   ├── <a href="./roles/k3s_master/">k3s_master</a><br>
+	│   │   ├── <a href="./roles/k3s_master/defaults/">defaults</a><br>
+	│   │   │   └── <a href="./roles/k3s_master/defaults/main.yml">main.yml</a><br>
+	│   │   ├── <a href="./roles/k3s_master/files/">files</a><br>
+	│   │   ├── <a href="./roles/k3s_master/handlers/">handlers</a><br>
+	│   │   │   └── <a href="./roles/k3s_master/handlers/main.yml">main.yml</a><br>
+	│   │   ├── <a href="./roles/k3s_master/meta/">meta</a><br>
+	│   │   │   └── <a href="./roles/k3s_master/meta/main.yml">main.yml</a><br>
+	│   │   ├── <a href="./roles/k3s_master/README.md">README.md</a><br>
+	│   │   ├── <a href="./roles/k3s_master/tasks/">tasks</a><br>
+	│   │   │   └── <a href="./roles/k3s_master/tasks/main.yml">main.yml</a><br>
+	│   │   ├── <a href="./roles/k3s_master/templates/">templates</a><br>
+	│   │   ├── <a href="./roles/k3s_master/tests/">tests</a><br>
+	│   │   │   ├── <a href="./roles/k3s_master/tests/inventory">inventory</a><br>
+	│   │   │   └── <a href="./roles/k3s_master/tests/test.yml">test.yml</a><br>
+	│   │   └── <a href="./roles/k3s_master/vars/">vars</a><br>
+	│   │   &nbsp;&nbsp;&nbsp; └── <a href="./roles/k3s_master/vars/main.yml">main.yml</a><br>
+	│   ├── <a href="./roles/k3s_worker/">k3s_worker</a><br>
+	│   │   ├── <a href="./roles/k3s_worker/defaults/">defaults</a><br>
+	│   │   │   └── <a href="./roles/k3s_worker/defaults/main.yml">main.yml</a><br>
+	│   │   ├── <a href="./roles/k3s_worker/files/">files</a><br>
+	│   │   ├── <a href="./roles/k3s_worker/handlers/">handlers</a><br>
+	│   │   │   └── <a href="./roles/k3s_worker/handlers/main.yml">main.yml</a><br>
+	│   │   ├── <a href="./roles/k3s_worker/meta/">meta</a><br>
+	│   │   │   └── <a href="./roles/k3s_worker/meta/main.yml">main.yml</a><br>
+	│   │   ├── <a href="./roles/k3s_worker/README.md">README.md</a><br>
+	│   │   ├── <a href="./roles/k3s_worker/tasks/">tasks</a><br>
+	│   │   │   └── <a href="./roles/k3s_worker/tasks/main.yml">main.yml</a><br>
+	│   │   ├── <a href="./roles/k3s_worker/templates/">templates</a><br>
+	│   │   ├── <a href="./roles/k3s_worker/tests/">tests</a><br>
+	│   │   │   ├── <a href="./roles/k3s_worker/tests/inventory">inventory</a><br>
+	│   │   │   └── <a href="./roles/k3s_worker/tests/test.yml">test.yml</a><br>
+	│   │   └── <a href="./roles/k3s_worker/vars/">vars</a><br>
+	│   │   &nbsp;&nbsp;&nbsp; └── <a href="./roles/k3s_worker/vars/main.yml">main.yml</a><br>
+	│   └── <a href="./roles/manageNamespaces/">manageNamespaces</a><br>
+	│   &nbsp;&nbsp;&nbsp; ├── <a href="./roles/manageNamespaces/defaults/">defaults</a><br>
+	│   &nbsp;&nbsp;&nbsp; │   └── <a href="./roles/manageNamespaces/defaults/main.yml">main.yml</a><br>
+	│   &nbsp;&nbsp;&nbsp; ├── <a href="./roles/manageNamespaces/files/">files</a><br>
+	│   &nbsp;&nbsp;&nbsp; ├── <a href="./roles/manageNamespaces/handlers/">handlers</a><br>
+	│   &nbsp;&nbsp;&nbsp; │   └── <a href="./roles/manageNamespaces/handlers/main.yml">main.yml</a><br>
+	│   &nbsp;&nbsp;&nbsp; ├── <a href="./roles/manageNamespaces/meta/">meta</a><br>
+	│   &nbsp;&nbsp;&nbsp; │   └── <a href="./roles/manageNamespaces/meta/main.yml">main.yml</a><br>
+	│   &nbsp;&nbsp;&nbsp; ├── <a href="./roles/manageNamespaces/README.md">README.md</a><br>
+	│   &nbsp;&nbsp;&nbsp; ├── <a href="./roles/manageNamespaces/tasks/">tasks</a><br>
+	│   &nbsp;&nbsp;&nbsp; │   └── <a href="./roles/manageNamespaces/tasks/main.yml">main.yml</a><br>
+	│   &nbsp;&nbsp;&nbsp; ├── <a href="./roles/manageNamespaces/templates/">templates</a><br>
+	│   &nbsp;&nbsp;&nbsp; ├── <a href="./roles/manageNamespaces/tests/">tests</a><br>
+	│   &nbsp;&nbsp;&nbsp; │   ├── <a href="./roles/manageNamespaces/tests/inventory">inventory</a><br>
+	│   &nbsp;&nbsp;&nbsp; │   └── <a href="./roles/manageNamespaces/tests/test.yml">test.yml</a><br>
+	│   &nbsp;&nbsp;&nbsp; └── <a href="./roles/manageNamespaces/vars/">vars</a><br>
+	│   &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; └── <a href="./roles/manageNamespaces/vars/main.yml">main.yml</a><br>
+	├── <a href="./site.yml">site.yml</a><br>
+	└── <a href="./structure.html">structure.html</a><br>
+<br><br><p>
+
+56 directories, 53 files
+
+</p>
+	<hr>
+	<p class="VERSION">
+		 tree v2.1.1 © 1996 - 2023 by Steve Baker and Thomas Moore <br>
+		 HTML output hacked and copyleft © 1998 by Francesc Rocher <br>
+		 JSON output hacked and copyleft © 2014 by Florian Sesser <br>
+		 Charsets / OS/2 support © 2001 by Kyosuke Tokoro
+	</p>
+</body>
+</html>

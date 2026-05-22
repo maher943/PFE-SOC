@@ -1,0 +1,6 @@
+#SPDX-License-Identifier: MIT-0
+---
+# defaults file for roles/helmDeployWazuh
+soc_namespace: "soc-core"  # Namespace unique pour tous tes outils
+wazuh_chart_version: "4.8.0"
+wazuh_replica_count: 1

@@ -1,0 +1,41 @@
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for manageNamespaces
+
+- name: "S'assurer que la bibliothèque Python kubernetes est présente"
+  become: yes
+  ansible.builtin.package:
+    name: python3-kubernetes
+    state: present
+
+- name: "Création des namespaces pour chaque tenant"
+  kubernetes.core.k8s:
+    api_version: v1
+    kind: Namespace
+    name: "{{ item.name }}"
+    state: present
+    kubeconfig: "{{ k8s_kubeconfig }}" # Utilise la variable de vars/main.yml
+    definition:
+      metadata:
+        labels:
+          type: "soc-tenant"
+          tenant-name: "{{ item.name }}"
+  become: yes # Nécessaire pour lire le fichier dans /etc/rancher/k3s/
+  loop: "{{ tenants }}"
+
+- name: "Application des quotas par tenant"
+  kubernetes.core.k8s:
+    state: present
+    kubeconfig: "{{ k8s_kubeconfig }}"
+    definition:
+      apiVersion: v1
+      kind: ResourceQuota
+      metadata:
+        name: "quota-{{ item.name }}"
+        namespace: "{{ item.name }}"
+      spec:
+        hard:
+          requests.cpu: "{{ item.cpu_limit }}"
+          requests.memory: "{{ item.mem_limit }}"
+  become: yes
+  loop: "{{ tenants }}"

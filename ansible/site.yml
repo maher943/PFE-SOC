@@ -17,27 +17,24 @@
   roles:
     - k3s_worker
 
-# --- Wazuh Stack ---
-- name: Install Wazuh Manager
-  hosts: wazuh_manager
-  become: true
+- name: setup helm
+  hosts: k3s_master
+  become: true 
   roles:
-    - wazuh_manager
+    - helm 
 
-- name: Install Wazuh Indexer
-  hosts: wazuh_manager        # même machine que le manager (nodeManager)
+- name: Create namespaces for Wazuh
+  hosts: k3s_master
+  vars:
+    target_tenant: "soc-core"  
   become: true
   roles:
-    - wazuh_indexer
+    - manageNamespaces
 
-- name: Install Wazuh Dashboard
-  hosts: wazuh_manager        # même machine que le manager (nodeManager)
+- name: Deploy Wazuh with Helm
+  hosts: k3s_master
   become: true
   roles:
-    - wazuh_dashboard
+    - helmDeployWazuh
 
-- name: Install Wazuh Agent
-  hosts: wazuh_agent
-  become: true
-  roles:
-    - wazuh_agent
+

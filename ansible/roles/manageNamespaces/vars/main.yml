@@ -1,0 +1,14 @@
+#SPDX-License-Identifier: MIT-0
+---
+# vars file for roles/manageNamespaces
+
+tenants:
+  - name: "soc-core"
+    cpu_limit: "4"
+    mem_limit: "8Gi"
+  - name: "client-a"
+    cpu_limit: "1"
+    mem_limit: "2Gi"
+
+# Chemin vers la config K3s (évite les répétitions dans les tâches)
+k8s_kubeconfig: "/etc/rancher/k3s/k3s.yaml"
